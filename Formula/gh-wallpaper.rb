@@ -1,0 +1,29 @@
+class GhWallpaper < Formula
+  desc "GitHub contribution heatmap as your macOS desktop wallpaper"
+  homepage "https://github.com/Numbatt/github-heatmap-wallpaper"
+  url "https://github.com/Numbatt/github-heatmap-wallpaper/archive/refs/tags/v0.1.0.tar.gz"
+  version "0.1.0"
+  sha256 "9d5dc82adc35cc1011ce6ddf88163ce78d0abfa9e2a25d398ed36a82cd2fdaf2"
+  license "MIT"
+
+  head "https://github.com/Numbatt/github-heatmap-wallpaper.git", branch: "main"
+
+  depends_on xcode: ["15.0", :build]
+  depends_on macos: :sonoma
+  depends_on "resvg"
+
+  def install
+    system "swift", "build", "--disable-sandbox", "-c", "release"
+    bin.install ".build/release/gh-wallpaper"
+    # Re-sign ad-hoc in place. macOS Sequoia/Tahoe attaches a
+    # `com.apple.provenance` xattr to copied binaries which, combined
+    # with the linker-emitted ad-hoc signature, makes amfid SIGKILL the
+    # process on first launch. A fresh `codesign --sign -` after the
+    # copy generates a valid ad-hoc signature that amfi accepts.
+    system "codesign", "--force", "--sign", "-", bin/"gh-wallpaper"
+  end
+
+  test do
+    assert_match "gh-wallpaper", shell_output("#{bin}/gh-wallpaper --help")
+  end
+end
