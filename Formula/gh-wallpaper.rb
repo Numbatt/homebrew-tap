@@ -1,22 +1,22 @@
 class GhWallpaper < Formula
   desc "GitHub contribution heatmap as your macOS desktop wallpaper"
   homepage "https://github.com/Numbatt/github-heatmap-wallpaper"
-  url "https://github.com/Numbatt/github-heatmap-wallpaper/archive/refs/tags/v0.2.1.tar.gz"
-  version "0.2.1"
-  sha256 "dd63cc4b4cd58ee7e85734b2c0d542065ae919de6a50a14ba148060e0296a649"
+  url "https://github.com/Numbatt/github-heatmap-wallpaper/archive/refs/tags/v0.2.2.tar.gz"
+  version "0.2.2"
+  sha256 "cefbed5d14109f93a08a8b5ce9ca146c6d971e638ce00de8d579c5077f2da846"
   license "MIT"
 
   head "https://github.com/Numbatt/github-heatmap-wallpaper.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/Numbatt/github-heatmap-wallpaper/releases/download/v0.2.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b22a58c638f0fa24e9233c0ce84c0a722bc45b9474220260581d1009b529440b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "635d46f4fac987518f2e311c0138bcb5a7a805c105871498d7f7489cc2c935e3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f98e58bafd58828ad663f83b7c12888a3633ef52278be87f1eb748d036edf05"
+    root_url "https://github.com/Numbatt/github-heatmap-wallpaper/releases/download/v0.2.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "417acb1ac0e71c779e249747794074958f4727c0b73b69f5178c3eb9f9f10dee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b588a6d8eb7b6d60c4ed6a01c6308be684bcf336e968bb83afed9a1e73937c82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae5ff316041626a46f4ec547c94f5b2b7df12c3d350d4d75ec594b777b899e5e"
   end
 
   # Bottle block intentionally empty until release tag + bottles are built.
-  # `script/update-bottle-block.sh v0.2.1` will splice in the real values
+  # `script/update-bottle-block.sh v0.2.2` will splice in the real values
   # once CI publishes the Sonoma/Sequoia bottles and the manual Tahoe
   # bottle is uploaded — see docs/RELEASING.md.
 
