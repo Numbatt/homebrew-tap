@@ -1,18 +1,18 @@
 class GhWallpaper < Formula
   desc "GitHub contribution heatmap as your macOS desktop wallpaper"
   homepage "https://github.com/Numbatt/github-heatmap-wallpaper"
-  url "https://github.com/Numbatt/github-heatmap-wallpaper/archive/refs/tags/v0.2.5.tar.gz"
-  version "0.2.5"
-  sha256 "45bc28df2049b9f10a0a839a8824eacfe3039c9ca5d32eadfe96f4e5ed605bd5"
+  url "https://github.com/Numbatt/github-heatmap-wallpaper/archive/refs/tags/v0.2.6.tar.gz"
+  version "0.2.6"
+  sha256 "847ffc0f78fefa48faa9406c61b707ae455f7a4f02f8926b9eddc37c57c2c7c5"
   license "MIT"
 
   head "https://github.com/Numbatt/github-heatmap-wallpaper.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/Numbatt/github-heatmap-wallpaper/releases/download/v0.2.5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ead417a1ea9f07dbff86baa8b6519bf8967fe128adc0d750d6ad3c8a4b8d76f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "181dc82a47738ba36c61f6410b15684c9e51fb897a60f4f2da3170a4a505790f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53b76ef70c9c4830c77521f961daf945fcd8be51b21534c095bfe060b42adf6c"
+    root_url "https://github.com/Numbatt/github-heatmap-wallpaper/releases/download/v0.2.6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b625a83df496d6051aa0a8bd53169a6b5b80b05466b4922bfb0693b97801340e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d911ae05458361429a3de4409d3fe5a950c1858b8549148b98b03310cec4ad66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61c969c1e8de9eeb7e25933e5ee32fc99aa9bdfc56cb6310683cf083052ed126"
   end
 
   # No `depends_on xcode` — Homebrew enforces it as full Xcode.app, which
